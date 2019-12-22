@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Pytorch: cuDNN error: CUDNN_STATUS_EXECUTION_FAILED</title>
+      <link href="/2019/12/22/Pytorch-cuDNN-error-CUDNN-STATUS-EXECUTION-FAILED/"/>
+      <url>/2019/12/22/Pytorch-cuDNN-error-CUDNN-STATUS-EXECUTION-FAILED/</url>
+      
+        <content type="html"><![CDATA[<h2 id="RuntimeError-cuDNN-error-CUDNN-STATUS-EXECUTION-FAILED"><a href="#RuntimeError-cuDNN-error-CUDNN-STATUS-EXECUTION-FAILED" class="headerlink" title="RuntimeError: cuDNN error: CUDNN_STATUS_EXECUTION_FAILED"></a>RuntimeError: cuDNN error: CUDNN_STATUS_EXECUTION_FAILED</h2><p><em>服务器配置一览: RTX 2080ti,cuda9</em></p><h3 id="所遇问题"><a href="#所遇问题" class="headerlink" title="所遇问题"></a>所遇问题</h3><p>在使用pytorch中预训练好的inception_v3网络跑自己实验的时候出现  </p><p><img src="/2019/12/22/Pytorch-cuDNN-error-CUDNN-STATUS-EXECUTION-FAILED/001.png" alt="问题截图"></p><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法:"></a>解决办法:</h3><p>网上常见的方法汇总:</p><ol><li><strong>重装cuda版本</strong> (RTX20180ti 与cuda9的适用性不如cuda10)</li><li><strong>torch.backends.cudnn.enabled = False</strong> (默认为ture，在调用包的后面加入即可)</li></ol><h3 id="我使用的方法"><a href="#我使用的方法" class="headerlink" title="我使用的方法"></a>我使用的方法</h3><p>比较懒，所以方法2</p><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p><strong>(摘录)</strong> 关于torch.backends.cudnn.enabled 的使用：</p><p>设置这个 flag 可以让内置的 cuDNN 的 auto-tuner 自动寻找最适合当前配置的高效算法，来达到优化运行效率的问题。</p><p>应该遵循以下准则：</p><p>如果网络的输入数据维度或类型上变化不大，置为true 可以增加运行效率；<br>如果网络的输入数据在每次 iteration 都变化的话，会导致 cnDNN 每次都会去寻找一遍最优配置，这样反而会降低运行效率。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> pytorch </tag>
+            
+            <tag> RuntimeError </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2019/10/07/hello-world/"/>
       <url>/2019/10/07/hello-world/</url>
