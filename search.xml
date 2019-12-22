@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>新建有图的博客</title>
+      <link href="/2019/12/22/%E6%96%B0%E5%BB%BA%E6%9C%89%E5%9B%BE%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2019/12/22/%E6%96%B0%E5%BB%BA%E6%9C%89%E5%9B%BE%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h2><p>hexo n ‘blog_name’</p><h2 id="编写博文"><a href="#编写博文" class="headerlink" title="编写博文"></a>编写博文</h2><p>打开名为 blog_name的.md文件 (推荐 使用有道云笔记编写markdown格式博文,写完后, ctrl+a,ctrl+c,ctrl+v搞定)  </p><h2 id="多标签格式"><a href="#多标签格式" class="headerlink" title="多标签格式"></a>多标签格式</h2><p>tags:[tag1, tag2, …,tagn]</p><h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>1.确认根目录下_config.yml 中的 post_asset_folder:(此处有空格)true<br>2.在hexo的根目录下执行 npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="noopener">https://github.com/CodeFalling/hexo-asset-image</a> –save<br>(我Fork的链接: <a href="https://github.com/xilixixili/hexo-asset-image.git" target="_blank" rel="noopener">https://github.com/xilixixili/hexo-asset-image.git</a>)<br>3.hexo n ‘blog_name’<br>执行过1、2两步后，此时会在_posts目录里出现一个与博文名字相同的文件夹，把你需要插入的图片放入就可以了。<br>4.hexo–markdown 图片引用格式如下:<br><strong>![插图注释](blog_name/image001.png)</strong></p><h2 id="生成博客"><a href="#生成博客" class="headerlink" title="生成博客"></a>生成博客</h2><p><strong>hexo g –&gt;hexo s</strong><br><strong>推送 hexo d</strong></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Pytorch: cuDNN error: CUDNN_STATUS_EXECUTION_FAILED</title>
       <link href="/2019/12/22/Pytorch-cuDNN-error-CUDNN-STATUS-EXECUTION-FAILED/"/>
       <url>/2019/12/22/Pytorch-cuDNN-error-CUDNN-STATUS-EXECUTION-FAILED/</url>
