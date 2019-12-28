@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>nvidia-smi报错</title>
+      <link href="/2019/12/28/nvidia-smi%E6%8A%A5%E9%94%99/"/>
+      <url>/2019/12/28/nvidia-smi%E6%8A%A5%E9%94%99/</url>
+      
+        <content type="html"><![CDATA[<h2 id="nvidai-smi-命令报错"><a href="#nvidai-smi-命令报错" class="headerlink" title="nvidai-smi 命令报错"></a>nvidai-smi 命令报错</h2><p><em>服务器配置一览: RTX 2080ti, cuda9</em></p><h3 id="所遇问题"><a href="#所遇问题" class="headerlink" title="所遇问题"></a>所遇问题</h3><p>最近服务器不知什么原因，在查看显卡使用率的时候(nvidia-smi)报如下错误：  </p><p><img src="/2019/12/28/nvidia-smi报错/001.png" alt="问题截图"></p><p>我根据提示重启了不止一次,但重启过后还是报这个错。</p><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>vim /etc/default/grub, 在GRUB_CMDLINE_LINUX_DEFAULT 值里面添加<br>acpi=noirq(空格) thermal.off=1<br>强制保存重启</p><p>例如：GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash acpi=noirq thermal.off=1”</p><h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>修改过后的确nvidia-smi就不报错了。但具体原理我不清楚。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> nvidia </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>新建有图的博客</title>
       <link href="/2019/12/22/%E6%96%B0%E5%BB%BA%E6%9C%89%E5%9B%BE%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
       <url>/2019/12/22/%E6%96%B0%E5%BB%BA%E6%9C%89%E5%9B%BE%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
