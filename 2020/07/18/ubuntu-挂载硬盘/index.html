@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>新建有图的博客 | 驿站</title>
-  <meta name="keywords" content=" hexo ">
-  <meta name="description" content="新建有图的博客 | 驿站">
+  <title>ubuntu 挂载硬盘 | 驿站</title>
+  <meta name="keywords" content=" ubuntu ">
+  <meta name="description" content="ubuntu 挂载硬盘 | 驿站">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="取名“驿站”的缘由 大山的博客，第一点，我自己没有很多时间（都是借口），也没有精力（又是借口），去总结遇到的问题和解决方法，但有需要有个类似备忘录的帮助自己在遗忘的时候快速查询；第二点，在我学习的时候，发现问题—找解决问题的方法—解决问题，第二步是特别让人头大的事情，因为，我本来就不知道什么方法可以解决，只能去网上搜，但是网上的答案非常多，非常多，但是量都参差不齐，要想找到很好的方法，很费时间，我">
 <meta property="og:type" content="website">
@@ -251,9 +251,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-新建有图的博客" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-ubuntu-挂载硬盘" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">新建有图的博客</h1>
+        <h1 class="article-title">ubuntu 挂载硬盘</h1>
     
     <div class="article-meta">
         
@@ -262,19 +262,19 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">hexo</a>
+            <a href="javascript:" class="color2">ubuntu</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-22 16:06:03'>2019-12-22 11:12</time>
+        创建时间:<time class="date" title='更新时间: 2020-07-18 16:27:55'>2020-07-18 16:26</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:191</span>
+        <span>字数:146</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -293,7 +293,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#新建博客"><span class="toc-text">新建博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写博文"><span class="toc-text">编写博文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多标签格式"><span class="toc-text">多标签格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入图片"><span class="toc-text">插入图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成博客"><span class="toc-text">生成博客</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ubuntu18-04-挂载硬盘"><span class="toc-text">ubuntu18.04 挂载硬盘</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-确定挂载位置，新建文件夹"><span class="toc-text">1.确定挂载位置，新建文件夹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-修改系统文件"><span class="toc-text">2.修改系统文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#查看需要被挂载的名称"><span class="toc-text">查看需要被挂载的名称</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看需要被挂载磁盘的分区UUID"><span class="toc-text">查看需要被挂载磁盘的分区UUID</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#打开系统文件"><span class="toc-text">打开系统文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#重启即可"><span class="toc-text">重启即可</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -309,12 +309,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h2><p>hexo n ‘blog_name’</p>
-<h2 id="编写博文"><a href="#编写博文" class="headerlink" title="编写博文"></a>编写博文</h2><p>打开名为 blog_name的.md文件 (推荐 使用有道云笔记编写markdown格式博文,写完后, ctrl+a,ctrl+c,ctrl+v搞定)  </p>
-<h2 id="多标签格式"><a href="#多标签格式" class="headerlink" title="多标签格式"></a>多标签格式</h2><p>tags:[tag1, tag2, …,tagn]</p>
-<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>1.确认根目录下_config.yml 中的 post_asset_folder:(此处有空格)true<br>2.在hexo的根目录下执行 npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="noopener">https://github.com/CodeFalling/hexo-asset-image</a> –save<br>(我Fork的链接: <a href="https://github.com/xilixixili/hexo-asset-image.git" target="_blank" rel="noopener">https://github.com/xilixixili/hexo-asset-image.git</a>)<br>3.hexo n ‘blog_name’<br>执行过1、2两步后，此时会在_posts目录里出现一个与博文名字相同的文件夹，把你需要插入的图片放入就可以了。<br>4.hexo–markdown 图片引用格式如下:<br><strong>![插图注释](blog_name/image001.png)</strong></p>
-<h2 id="生成博客"><a href="#生成博客" class="headerlink" title="生成博客"></a>生成博客</h2><p><strong>hexo g –&gt;hexo s</strong><br><strong>推送 hexo d</strong></p>
+        <h3 id="ubuntu18-04-挂载硬盘"><a href="#ubuntu18-04-挂载硬盘" class="headerlink" title="ubuntu18.04 挂载硬盘"></a>ubuntu18.04 挂载硬盘</h3><h4 id="1-确定挂载位置，新建文件夹"><a href="#1-确定挂载位置，新建文件夹" class="headerlink" title="1.确定挂载位置，新建文件夹"></a>1.确定挂载位置，新建文件夹</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /media/example</span><br></pre></td></tr></table></figure>
 
+<h4 id="2-修改系统文件"><a href="#2-修改系统文件" class="headerlink" title="2.修改系统文件"></a>2.修改系统文件</h4><h5 id="查看需要被挂载的名称"><a href="#查看需要被挂载的名称" class="headerlink" title="查看需要被挂载的名称"></a>查看需要被挂载的名称</h5><p>如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/dev/sdb4</span><br><span class="line">/dev/sdc2</span><br><span class="line">查看方式：打开文件管理，其他位置；或者磁盘工具 或者df -hl</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看需要被挂载磁盘的分区UUID"><a href="#查看需要被挂载磁盘的分区UUID" class="headerlink" title="查看需要被挂载磁盘的分区UUID"></a>查看需要被挂载磁盘的分区UUID</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo blkid</span><br><span class="line">找到 对应的UUID与type</span><br></pre></td></tr></table></figure>
+
+<h5 id="打开系统文件"><a href="#打开系统文件" class="headerlink" title="打开系统文件"></a>打开系统文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">打开之后复制第一行UUID</span><br><span class="line">sudo gedit /etc/fstab</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>把对应的UUID 与type 修改为刚刚查到的</li>
+<li>在UUID 后加入/media/example</li>
+<li>把errors=remount-ro改为defaults，后面的1改0</li>
+</ul>
+<h5 id="重启即可"><a href="#重启即可" class="headerlink" title="重启即可"></a>重启即可</h5>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 luckiestman0@qq.com </span>
     </div>
@@ -327,12 +336,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>新建有图的博客</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">191</span></p>
+    <p><span class="copy-title">文章标题:</span>ubuntu 挂载硬盘</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">146</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Dashan">Dashan</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-12-22, 11:12:46</p>
-    <p><span class="copy-title">最后更新:</span>2019-12-22, 16:06:03</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/22/新建有图的博客/" title="新建有图的博客">http://yoursite.com/2019/12/22/新建有图的博客/</a>
+    <p><span class="copy-title">发布时间:</span>2020-07-18, 16:26:43</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-18, 16:27:55</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/18/ubuntu-挂载硬盘/" title="ubuntu 挂载硬盘">http://yoursite.com/2020/07/18/ubuntu-挂载硬盘/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
