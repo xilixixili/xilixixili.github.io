@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>about | 驿站</title>
-  <meta name="keywords" content>
-  <meta name="description" content="about | 驿站">
+  <title>Linux screen 命令总结 | 驿站</title>
+  <meta name="keywords" content=" Linu ">
+  <meta name="description" content="Linux screen 命令总结 | 驿站">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="取名“驿站”的缘由 大山的博客，第一点，我自己没有很多时间（都是借口），也没有精力（又是借口），去总结遇到的问题和解决方法，但有需要有个类似备忘录的帮助自己在遗忘的时候快速查询；第二点，在我学习的时候，发现问题—找解决问题的方法—解决问题，第二步是特别让人头大的事情，因为，我本来就不知道什么方法可以解决，只能去网上搜，但是网上的答案非常多，非常多，但是量都参差不齐，要想找到很好的方法，很费时间，我">
 <meta property="og:type" content="website">
@@ -263,24 +263,30 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-Linux-screen-命令总结" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">Linux screen 命令总结</h1>
     
     <div class="article-meta">
         
         
         
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color5">Linu</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-08 13:05:25'>2019-10-08 12:24</time>
+        创建时间:<time class="date" title='更新时间: 2020-07-24 14:58:37'>2020-07-24 14:58</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:274</span>
+        <span>字数:115</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -299,7 +305,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#取名“驿站”的缘由"><span class="toc-text">取名“驿站”的缘由</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于此驿站"><span class="toc-text">关于此驿站</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#screen-命令总结"><span class="toc-text">screen 命令总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-开启一个新的screen"><span class="toc-text">1 开启一个新的screen</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-推出当前屏幕"><span class="toc-text">2 推出当前屏幕</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-在根目录下查看存在的screen"><span class="toc-text">3 在根目录下查看存在的screen</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-在根目录下进入某个screen"><span class="toc-text">4 在根目录下进入某个screen</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-强制连接screen-当前被人接入的"><span class="toc-text">5 强制连接screen(当前被人接入的)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-当前屏幕假死，强制关闭，跳到下一个"><span class="toc-text">6 当前屏幕假死，强制关闭，跳到下一个</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-杀死已经无用的screen"><span class="toc-text">7 杀死已经无用的screen</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#未完待续…"><span class="toc-text">未完待续…</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -315,11 +321,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="取名“驿站”的缘由"><a href="#取名“驿站”的缘由" class="headerlink" title="取名“驿站”的缘由"></a>取名“驿站”的缘由</h1><p> 大山的博客，第一点，我自己没有很多时间（都是借口），也没有精力（又是借口），去总结遇到的问题和解决方法，但有需要有个类似备忘录的帮助自己在遗忘的时候快速查询；第二点，在我学习的时候，发现问题—找解决问题的方法—解决问题，第二步是特别让人头大的事情，因为，我本来就不知道什么方法可以解决，只能去网上搜，但是网上的答案非常多，非常多，但是量都参差不齐，要想找到很好的方法，很费时间，我浪费了大量的时间，所以我想把我用过的、好的博文分享出来。<br> <strong>“驿站”</strong> 意味在此接待来客，稍作休整，送走去客。<br>希望我能坚持分享，也希望由此想法的人一起交流：<strong>email：<a href="mailto:luckiestman0@qq.com" target="_blank" rel="noopener">luckiestman0@qq.com</a></strong></p>
-<p><strong>加油！：）</strong></p>
-<h2 id="关于此驿站"><a href="#关于此驿站" class="headerlink" title="关于此驿站"></a>关于此驿站</h2><p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-
+        <h3 id="screen-命令总结"><a href="#screen-命令总结" class="headerlink" title="screen 命令总结"></a>screen 命令总结</h3><h4 id="1-开启一个新的screen"><a href="#1-开启一个新的screen" class="headerlink" title="1 开启一个新的screen"></a>1 开启一个新的screen</h4><pre><code>screen -S name</code></pre><h4 id="2-推出当前屏幕"><a href="#2-推出当前屏幕" class="headerlink" title="2 推出当前屏幕"></a>2 推出当前屏幕</h4><pre><code>Ctrl+a    + d
+exit</code></pre><h4 id="3-在根目录下查看存在的screen"><a href="#3-在根目录下查看存在的screen" class="headerlink" title="3 在根目录下查看存在的screen"></a>3 在根目录下查看存在的screen</h4><pre><code>screen -ls</code></pre><h4 id="4-在根目录下进入某个screen"><a href="#4-在根目录下进入某个screen" class="headerlink" title="4 在根目录下进入某个screen"></a>4 在根目录下进入某个screen</h4><pre><code>screen -r id   # screen -ls  查看到的 对应 id</code></pre><h4 id="5-强制连接screen-当前被人接入的"><a href="#5-强制连接screen-当前被人接入的" class="headerlink" title="5 强制连接screen(当前被人接入的)"></a>5 强制连接screen(当前被人接入的)</h4><pre><code>screen -D -r id
+screen -x -r id # 共享</code></pre><h4 id="6-当前屏幕假死，强制关闭，跳到下一个"><a href="#6-当前屏幕假死，强制关闭，跳到下一个" class="headerlink" title="6 当前屏幕假死，强制关闭，跳到下一个"></a>6 当前屏幕假死，强制关闭，跳到下一个</h4><pre><code>Ctrl+a    +K</code></pre><h4 id="7-杀死已经无用的screen"><a href="#7-杀死已经无用的screen" class="headerlink" title="7 杀死已经无用的screen"></a>7 杀死已经无用的screen</h4><pre><code>screen -X -S id quit</code></pre><h3 id="未完待续…"><a href="#未完待续…" class="headerlink" title="未完待续…"></a>未完待续…</h3>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 luckiestman0@qq.com </span>
     </div>
@@ -330,6 +334,18 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Linux screen 命令总结</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">115</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Dashan">Dashan</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-07-24, 14:58:11</p>
+    <p><span class="copy-title">最后更新:</span>2020-07-24, 14:58:37</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/24/Linux-screen-命令总结/" title="Linux screen 命令总结">http://yoursite.com/2020/07/24/Linux-screen-命令总结/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 
