@@ -14,7 +14,9 @@
       
         <tags>
             
-            <tag> Linu </tag>
+            <tag> linux </tag>
+            
+            <tag> ubuntu </tag>
             
         </tags>
       
@@ -115,9 +117,9 @@
             
             <tag> pytorch </tag>
             
-            <tag> nvidia </tag>
-            
             <tag> cuda </tag>
+            
+            <tag> nvidia </tag>
             
             <tag> Ubuntu </tag>
             
