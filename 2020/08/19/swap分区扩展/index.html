@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Linux screen 命令总结 | 驿站</title>
-  <meta name="keywords" content=" linux , ubuntu ">
-  <meta name="description" content="Linux screen 命令总结 | 驿站">
+  <title>swap分区扩展 | 驿站</title>
+  <meta name="keywords" content=" ubuntu , liunx ">
+  <meta name="description" content="swap分区扩展 | 驿站">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="取名“驿站”的缘由 大山的博客，第一点，我自己没有很多时间（都是借口），也没有精力（又是借口），去总结遇到的问题和解决方法，但有需要有个类似备忘录的帮助自己在遗忘的时候快速查询；第二点，在我学习的时候，发现问题—找解决问题的方法—解决问题，第二步是特别让人头大的事情，因为，我本来就不知道什么方法可以解决，只能去网上搜，但是网上的答案非常多，非常多，但是量都参差不齐，要想找到很好的方法，很费时间，我">
 <meta property="og:type" content="website">
@@ -291,9 +291,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Linux-screen-命令总结" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-swap分区扩展" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Linux screen 命令总结</h1>
+        <h1 class="article-title">swap分区扩展</h1>
     
     <div class="article-meta">
         
@@ -302,21 +302,21 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color1">linux</a>
-            
             <a href="javascript:" class="color2">ubuntu</a>
+            
+            <a href="javascript:" class="color1">liunx</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-07-24 15:16:19'>2020-07-24 14:58</time>
+        创建时间:<time class="date" title='更新时间: 2020-08-19 16:45:09'>2020-08-19 16:43</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:115</span>
+        <span>字数:313</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -335,7 +335,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#screen-命令总结"><span class="toc-text">screen 命令总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-开启一个新的screen"><span class="toc-text">1 开启一个新的screen</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-推出当前屏幕"><span class="toc-text">2 推出当前屏幕</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-在根目录下查看存在的screen"><span class="toc-text">3 在根目录下查看存在的screen</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-在根目录下进入某个screen"><span class="toc-text">4 在根目录下进入某个screen</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-强制连接screen-当前被人接入的"><span class="toc-text">5 强制连接screen(当前被人接入的)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-当前屏幕假死，强制关闭，跳到下一个"><span class="toc-text">6 当前屏幕假死，强制关闭，跳到下一个</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-杀死已经无用的screen"><span class="toc-text">7 杀死已经无用的screen</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#未完待续…"><span class="toc-text">未完待续…</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展swap分区"><span class="toc-text">扩展swap分区</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-创建用于交换的文件"><span class="toc-text">1. 创建用于交换的文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-设置交换分区"><span class="toc-text">2. 设置交换分区</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-注册交换分区"><span class="toc-text">2.1 注册交换分区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-启用刚刚创建的交换分区文件"><span class="toc-text">2.2 启用刚刚创建的交换分区文件</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -351,9 +351,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="screen-命令总结"><a href="#screen-命令总结" class="headerlink" title="screen 命令总结"></a>screen 命令总结</h3><h4 id="1-开启一个新的screen"><a href="#1-开启一个新的screen" class="headerlink" title="1 开启一个新的screen"></a>1 开启一个新的screen</h4><pre><code>screen -S name</code></pre><h4 id="2-推出当前屏幕"><a href="#2-推出当前屏幕" class="headerlink" title="2 推出当前屏幕"></a>2 推出当前屏幕</h4><pre><code>Ctrl+a    + d
-exit</code></pre><h4 id="3-在根目录下查看存在的screen"><a href="#3-在根目录下查看存在的screen" class="headerlink" title="3 在根目录下查看存在的screen"></a>3 在根目录下查看存在的screen</h4><pre><code>screen -ls</code></pre><h4 id="4-在根目录下进入某个screen"><a href="#4-在根目录下进入某个screen" class="headerlink" title="4 在根目录下进入某个screen"></a>4 在根目录下进入某个screen</h4><pre><code>screen -r id   # screen -ls  查看到的 对应 id</code></pre><h4 id="5-强制连接screen-当前被人接入的"><a href="#5-强制连接screen-当前被人接入的" class="headerlink" title="5 强制连接screen(当前被人接入的)"></a>5 强制连接screen(当前被人接入的)</h4><pre><code>screen -D -r id
-screen -x -r id # 共享</code></pre><h4 id="6-当前屏幕假死，强制关闭，跳到下一个"><a href="#6-当前屏幕假死，强制关闭，跳到下一个" class="headerlink" title="6 当前屏幕假死，强制关闭，跳到下一个"></a>6 当前屏幕假死，强制关闭，跳到下一个</h4><pre><code>Ctrl+a    +K</code></pre><h4 id="7-杀死已经无用的screen"><a href="#7-杀死已经无用的screen" class="headerlink" title="7 杀死已经无用的screen"></a>7 杀死已经无用的screen</h4><pre><code>screen -X -S id quit</code></pre><h3 id="未完待续…"><a href="#未完待续…" class="headerlink" title="未完待续…"></a>未完待续…</h3>
+        <h3 id="扩展swap分区"><a href="#扩展swap分区" class="headerlink" title="扩展swap分区"></a>扩展swap分区</h3><h4 id="1-创建用于交换的文件"><a href="#1-创建用于交换的文件" class="headerlink" title="1. 创建用于交换的文件"></a>1. 创建用于交换的文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd if=/dev/zero of=/path/swapfile bs=1M count=2048</span><br></pre></td></tr></table></figure>
+
+<p>注：bs是每块的大小。count为块的个数 总大小：块大小*块个数</p>
+<h4 id="2-设置交换分区"><a href="#2-设置交换分区" class="headerlink" title="2. 设置交换分区"></a>2. 设置交换分区</h4><h5 id="2-1-注册交换分区"><a href="#2-1-注册交换分区" class="headerlink" title="2.1 注册交换分区"></a>2.1 注册交换分区</h5><p>注意目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap /swapfile</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-2-启用刚刚创建的交换分区文件"><a href="#2-2-启用刚刚创建的交换分区文件" class="headerlink" title="2.2 启用刚刚创建的交换分区文件"></a>2.2 启用刚刚创建的交换分区文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">swapon /swapfile</span><br><span class="line">```  </span><br><span class="line">#### 3. 挂载</span><br><span class="line">在文件/etc/fstab中加入下面一行</span><br></pre></td></tr></table></figure>
+
+<p>/path/swapfile swap swap defaults 0 0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注：/path是你创建swapfeile的目录</span><br><span class="line"></span><br><span class="line">### 4.查看</span><br></pre></td></tr></table></figure>
+
+<p>free -m</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">==over==  </span><br><span class="line"></span><br><span class="line">注：如果在 /etc/rc.local 中有 swapoff -a 需要修改为 swapon -a</span><br><span class="line"></span><br><span class="line">### 修改 swpapiness 参数</span><br><span class="line">通过查看 /proc/sys/vm/swappiness 内容的值来确定系统对 SWAP 分区的使用原则。</span><br><span class="line">- swappiness 的值为 0 时，表示最大限度地使用物理内存，物理内存使用完毕后，才会使用 SWAP 分区。</span><br><span class="line">- swappiness 的值为 100 时，表示积极地使用 SWAP分区，并且把内存中的数据及时地置换到 SWAP 分区。</span><br><span class="line">##### 修改方法</span><br><span class="line">- 临时修改：可以使用下述方法临时修改此参数，假设我们配置为空闲内存少于 10% 时才使用 SWAP 分区：</span><br></pre></td></tr></table></figure>
+
+<p>echo 10 &gt;/proc/sys/vm/swappiness</p>
+<pre><code>
+- 永久：打开 /etc/sysctl.conf 文件，并增加以下内容：
+vm.swappiness=10</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 luckiestman0@qq.com </span>
     </div>
@@ -366,12 +381,12 @@ screen -x -r id # 共享</code></pre><h4 id="6-当前屏幕假死，强制关闭
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Linux screen 命令总结</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">115</span></p>
+    <p><span class="copy-title">文章标题:</span>swap分区扩展</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">313</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Dashan">Dashan</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-07-24, 14:58:11</p>
-    <p><span class="copy-title">最后更新:</span>2020-07-24, 15:16:19</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/07/24/Linux-screen-命令总结/" title="Linux screen 命令总结">http://yoursite.com/2020/07/24/Linux-screen-命令总结/</a>
+    <p><span class="copy-title">发布时间:</span>2020-08-19, 16:43:09</p>
+    <p><span class="copy-title">最后更新:</span>2020-08-19, 16:45:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/08/19/swap分区扩展/" title="swap分区扩展">http://yoursite.com/2020/08/19/swap分区扩展/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
